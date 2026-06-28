@@ -1,0 +1,138 @@
+---
+import { getLangFromUrl, useTranslations, localizePath } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+
+const nav = [
+  { href: "#work", label: t("nav.work") },
+  { href: "#services", label: t("nav.services") },
+  { href: "#contact", label: t("nav.contact") },
+];
+const social = [
+  { href: "https://github.com/sisques-labs", label: "GitHub" },
+  { href: "https://www.linkedin.com", label: "LinkedIn" },
+  { href: "https://x.com", label: "X / Twitter" },
+];
+---
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href={localizePath("/", lang)}>
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>sisques<span class="brand__labs">labs</span></span>
+      </a>
+      <p class="footer__tagline">{t("footer.tagline")}</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Footer">
+      <h3>{t("footer.nav")}</h3>
+      <ul>
+        {nav.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="footer__col">
+      <h3>{t("footer.social")}</h3>
+      <ul>
+        {
+          social.map((l) => (
+            <li>
+              <a href={l.href} target="_blank" rel="noopener noreferrer">
+                {l.label} <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© {year} Sisques Labs. {t("footer.rights")}</span>
+    <span class="footer__made">{t("footer.made")}</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding-top: clamp(3rem, 6vw, 5rem);
+    background: var(--bg);
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .brand__mark {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .brand__labs {
+    color: var(--ink-faint);
+    margin-left: 0.1em;
+  }
+  .footer__tagline {
+    margin-top: 1rem;
+    max-width: 34ch;
+    color: var(--ink-soft);
+  }
+
+  .footer__col h3 {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1.1rem;
+    font-weight: 500;
+  }
+  .footer__col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .footer__col a {
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+  }
+  .footer__col a:hover {
+    color: var(--ink);
+  }
+
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding-block: 1.6rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 720px) {
+    .footer__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer__brand {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

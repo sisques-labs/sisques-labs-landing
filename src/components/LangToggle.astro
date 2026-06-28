@@ -1,0 +1,46 @@
+---
+import {
+  getLangFromUrl,
+  getAlternateLangPath,
+  useTranslations,
+} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const other = lang === "es" ? "en" : "es";
+const otherPath = getAlternateLangPath(Astro.url, other);
+---
+
+<a class="lang-toggle" href={otherPath} aria-label={t("lang.toggle")}>
+  <span class={lang === "es" ? "is-active" : ""}>ES</span>
+  <span class="sep" aria-hidden="true">/</span>
+  <span class={lang === "en" ? "is-active" : ""}>EN</span>
+</a>
+
+<style>
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 42px;
+    padding-inline: 0.9rem;
+    border-radius: 100px;
+    border: 1px solid var(--line-strong);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .lang-toggle:hover {
+    border-color: var(--ink);
+    background: var(--bg-sunken);
+  }
+  .lang-toggle .is-active {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .sep {
+    opacity: 0.4;
+  }
+</style>

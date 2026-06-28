@@ -1,0 +1,189 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const stats = [
+  { value: t("hero.stat.1.value"), label: t("hero.stat.1.label") },
+  { value: t("hero.stat.2.value"), label: t("hero.stat.2.label") },
+  { value: t("hero.stat.3.value"), label: t("hero.stat.3.label") },
+];
+---
+
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__glow"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <p class="eyebrow" data-reveal>{t("hero.tag")}</p>
+
+    <h1 class="hero__title display" data-reveal data-reveal-delay="80ms">
+      <span class="line">{t("hero.title.1")}</span>
+      <span class="line">
+        <span class="accent-text">{t("hero.title.2")}</span>
+      </span>
+      <span class="line">{t("hero.title.3")}</span>
+    </h1>
+
+    <p class="lead hero__lead" data-reveal data-reveal-delay="160ms">
+      {t("hero.lead")}
+    </p>
+
+    <div class="hero__cta" data-reveal data-reveal-delay="220ms">
+      <a class="btn btn--primary" href="#work">
+        {t("hero.cta.primary")}
+        <span class="arrow">→</span>
+      </a>
+      <a class="btn btn--ghost" href="#contact">{t("hero.cta.secondary")}</a>
+    </div>
+
+    <dl class="hero__stats" data-reveal data-reveal-delay="300ms">
+      {
+        stats.map((s) => (
+          <div class="stat">
+            <dt class="stat__value display">{s.value}</dt>
+            <dd class="stat__label">{s.label}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span></span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: clamp(4rem, 12vh, 8rem) clamp(3rem, 8vh, 5rem);
+    overflow: hidden;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero__grid {
+    position: absolute;
+    inset: -2px;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: clamp(48px, 6vw, 84px) clamp(48px, 6vw, 84px);
+    mask-image: radial-gradient(120% 80% at 70% 0%, #000 35%, transparent 78%);
+    -webkit-mask-image: radial-gradient(120% 80% at 70% 0%, #000 35%, transparent 78%);
+  }
+  .hero__glow {
+    position: absolute;
+    top: -25%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    max-width: 720px;
+    max-height: 720px;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--accent) 40%, transparent) 0%,
+      transparent 62%
+    );
+    filter: blur(20px);
+    opacity: 0.55;
+    animation: float 14s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-4%, 4%) scale(1.08); }
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero__title {
+    margin-top: 1.6rem;
+    font-size: clamp(2.9rem, 1.5rem + 8vw, 7.5rem);
+    letter-spacing: -0.04em;
+  }
+  .hero__title .line {
+    display: block;
+  }
+  .hero__title .accent-text {
+    line-height: 1.05;
+  }
+
+  .hero__lead {
+    margin-top: 1.8rem;
+    max-width: 46ch;
+    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
+  }
+
+  .hero__cta {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .hero__stats {
+    margin-top: clamp(3rem, 7vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 640px;
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+  .stat__value {
+    font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3rem);
+    letter-spacing: -0.03em;
+  }
+  .stat__label {
+    margin-top: 0.35rem;
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    line-height: 1.4;
+  }
+
+  .hero__scroll {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 36px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 100px;
+    display: grid;
+    place-items: start center;
+    padding-top: 7px;
+    z-index: 1;
+  }
+  .hero__scroll span {
+    width: 3px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 4px;
+    animation: scrolldot 1.8s ease-in-out infinite;
+  }
+  @keyframes scrolldot {
+    0% { opacity: 0; transform: translateY(-3px); }
+    40% { opacity: 1; }
+    80%, 100% { opacity: 0; transform: translateY(9px); }
+  }
+
+  @media (max-width: 560px) {
+    .hero__stats {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 1rem;
+    }
+    .hero__scroll {
+      display: none;
+    }
+  }
+</style>
