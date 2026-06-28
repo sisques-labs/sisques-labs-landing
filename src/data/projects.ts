@@ -19,8 +19,36 @@ export interface Project {
   accent: string;
 }
 
-// 👇 Placeholders editables. Cambia textos, tags, años y enlaces a tu gusto.
+// 👇 Proyectos reales primero; el resto son placeholders editables.
 export const projects: Project[] = [
+  {
+    id: "cookidoo-mcp",
+    name: "Cookidoo MCP",
+    category: { es: "Servidor MCP · IA", en: "MCP Server · AI" },
+    summary: {
+      es: "Servidor MCP no oficial para Cookidoo: deja que agentes de IA busquen recetas, gestionen el menú semanal y la lista de la compra.",
+      en: "Unofficial MCP server for Cookidoo: let AI agents search recipes, manage meal plans and build shopping lists.",
+    },
+    tags: ["TypeScript", "NestJS", "MCP", "DDD"],
+    year: "2025",
+    role: { es: "Proyecto propio", en: "In-house product" },
+    url: "https://sisques-labs.github.io/cookidoo-mcp/",
+    accent: "#FF7A45",
+  },
+  {
+    id: "loopback",
+    name: "Loopback",
+    category: { es: "Herramienta dev · Cloud", en: "Dev Tool · Cloud" },
+    summary: {
+      es: "Panel local para operar servicios de AWS en tu máquina (LocalStack / Floci): S3, SQS, SNS, DynamoDB, Lambda y CloudWatch desde una sola UI.",
+      en: "Local operator dashboard for AWS services on your machine (LocalStack / Floci): S3, SQS, SNS, DynamoDB, Lambda and CloudWatch from one UI.",
+    },
+    tags: ["TypeScript", "Next.js", "AWS", "Docker"],
+    year: "2025",
+    role: { es: "Proyecto propio", en: "In-house product" },
+    url: "https://github.com/sisques-labs/loopback",
+    accent: "#6E8BFF",
+  },
   {
     id: "nimbus",
     name: "Nimbus",
@@ -33,7 +61,7 @@ export const projects: Project[] = [
     year: "2025",
     role: { es: "Diseño + Full-stack", en: "Design + Full-stack" },
     url: "#",
-    accent: "#C8FF3D",
+    accent: "#FF6FA5",
   },
   {
     id: "harbor",

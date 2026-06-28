@@ -28,7 +28,12 @@ const items = projects.map((p) => localizeProject(p, lang));
             data-reveal-delay={`${(i % 2) * 80}ms`}
             style={`--card-accent:${p.accent}`}
           >
-            <a class="card__link" href={p.url}>
+            <a
+              class="card__link"
+              href={p.url}
+              target={p.url.startsWith("http") ? "_blank" : undefined}
+              rel={p.url.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
               <div class="card__top">
                 <span class="card__cat">{p.category}</span>
                 <span class="card__year">{p.year}</span>
