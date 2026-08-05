@@ -19,7 +19,7 @@
     "prepare": "node -e \"if(process.env.HUSKY!=='0')require('child_process').execSync('husky',{stdio:'inherit'})\""
   },
   "dependencies": {
-    "astro": "^5.2.5"
+    "astro": "^7.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx,astro}": [
