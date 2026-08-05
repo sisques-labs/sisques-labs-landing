@@ -6,8 +6,20 @@ const t = useTranslations(lang);
 const email = "hola@sisques-labs.com";
 const budgets =
   lang === "es"
-    ? [t("contact.budget.none"), "< 5k €", "5k – 15k €", "15k – 40k €", "> 40k €"]
-    : [t("contact.budget.none"), "< $5k", "$5k – $15k", "$15k – $40k", "> $40k"];
+    ? [
+        t("contact.budget.none"),
+        "< 5k €",
+        "5k – 15k €",
+        "15k – 40k €",
+        "> 40k €",
+      ]
+    : [
+        t("contact.budget.none"),
+        "< $5k",
+        "$5k – $15k",
+        "$15k – $40k",
+        "> $40k",
+      ];
 ---
 
 <section class="section contact" id="contact">
@@ -26,7 +38,12 @@ const budgets =
       </p>
     </div>
 
-    <form class="contact__form" id="contact-form" data-reveal data-reveal-delay="120ms">
+    <form
+      class="contact__form"
+      id="contact-form"
+      data-reveal
+      data-reveal-delay="120ms"
+    >
       <div class="field">
         <label for="name">{t("contact.name")}</label>
         <input
@@ -144,7 +161,9 @@ const budgets =
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 0.8rem 0.95rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
   textarea {
     resize: vertical;
@@ -202,7 +221,9 @@ const budgets =
 <script>
   // No backend yet: compose a prefilled email so the form is functional.
   // Swap this for Formspree / an API endpoint when ready.
-  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const form = document.getElementById(
+    "contact-form",
+  ) as HTMLFormElement | null;
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
     const data = new FormData(form);
@@ -212,7 +233,7 @@ const budgets =
     const message = String(data.get("message") || "");
     const subject = encodeURIComponent(`Nuevo proyecto — ${name}`);
     const body = encodeURIComponent(
-      `Nombre: ${name}\nEmail: ${email}\nPresupuesto: ${budget}\n\n${message}`
+      `Nombre: ${name}\nEmail: ${email}\nPresupuesto: ${budget}\n\n${message}`,
     );
     window.location.href = `mailto:hola@sisques-labs.com?subject=${subject}&body=${body}`;
   });

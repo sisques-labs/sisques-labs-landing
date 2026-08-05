@@ -113,8 +113,10 @@ const items = entries
     border-radius: var(--radius-lg);
     background: var(--card);
     overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
   .card:hover {
     transform: translateY(-5px);
@@ -147,7 +149,8 @@ const items = entries
     position: relative;
     height: clamp(120px, 16vw, 180px);
     border-radius: var(--radius);
-    background: radial-gradient(
+    background:
+      radial-gradient(
         120% 120% at 50% 0%,
         color-mix(in srgb, var(--card-accent) 22%, transparent),
         transparent 70%

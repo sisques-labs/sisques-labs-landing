@@ -3,7 +3,10 @@ import { glob } from "astro/loaders";
 
 const projects = defineCollection({
   // Files starting with "_" (e.g. _TEMPLATE.md) are ignored.
-  loader: glob({ pattern: ["**/*.md", "!_*.md"], base: "./src/content/projects" }),
+  loader: glob({
+    pattern: ["**/*.md", "!_*.md"],
+    base: "./src/content/projects",
+  }),
   schema: z.object({
     /** Display name (same in both languages unless overridden) */
     name: z.string(),

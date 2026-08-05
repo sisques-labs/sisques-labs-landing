@@ -34,7 +34,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={lang === "es" ? "en" : "es"} href={altPath} />
+    <link
+      rel="alternate"
+      hreflang={lang === "es" ? "en" : "es"}
+      href={altPath}
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -56,7 +60,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       (() => {
         const stored = localStorage.getItem("theme");
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          "(prefers-color-scheme: dark)",
         ).matches;
         const theme = stored || (prefersDark ? "dark" : "light");
         document.documentElement.setAttribute("data-theme", theme);
@@ -81,7 +85,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
               }
             }
           },
-          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
         );
         items.forEach((el) => io.observe(el));
       } else {

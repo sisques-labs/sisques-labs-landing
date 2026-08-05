@@ -18,7 +18,11 @@ export const services: Service[] = [
       en: "We turn a fuzzy idea into a clear plan: what to build, in what order and why.",
     },
     items: {
-      es: ["Discovery & roadmap", "Prototipado rápido", "Validación con usuarios"],
+      es: [
+        "Discovery & roadmap",
+        "Prototipado rápido",
+        "Validación con usuarios",
+      ],
       en: ["Discovery & roadmap", "Rapid prototyping", "User validation"],
     },
   },
