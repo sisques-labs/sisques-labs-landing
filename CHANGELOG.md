@@ -1,6 +1,14 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.1.1] - 2026-08-05
+
+### Bug Fixes
+- **deps:** Update dependency astro to v7 [security] (8c18492)
+
+### Chore
+- **deps:** Update node.js to v24 (a88a7e0)
+- **deps:** Update pnpm to v10.34.5 (#12) (5086725)
 ## [0.1.0] - 2026-08-05
 
 ### Chore
