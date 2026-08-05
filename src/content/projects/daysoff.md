@@ -8,7 +8,7 @@ tags: ["Astro", "React", "TypeScript", "Tailwind"]
 year: "2026"
 role_es: "Proyecto propio"
 role_en: "In-house product"
-url: "https://github.com/sisques-labs/daysoff"
+url: "https://sisques-labs.github.io/daysoff/"
 accent: "#3ED6B5"
 order: 9
 ---
