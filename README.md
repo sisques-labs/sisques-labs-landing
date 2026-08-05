@@ -16,10 +16,10 @@ de desarrollo.
 ## Desarrollo
 
 ```bash
-npm install
-npm run dev      # servidor local en http://localhost:4321
-npm run build    # genera la web estática en dist/
-npm run preview  # sirve el build de producción
+pnpm install
+pnpm dev      # servidor local en http://localhost:4321
+pnpm build    # genera la web estática en dist/
+pnpm preview  # sirve el build de producción
 ```
 
 ## Estructura

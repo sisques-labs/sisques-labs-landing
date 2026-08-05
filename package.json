@@ -3,14 +3,42 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write \"src/**/*.{ts,tsx,astro}\"",
+    "lint": "eslint . --fix",
+    "test": "vitest run",
+    "test:changed": "vitest run --changed HEAD~1",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "prepare": "node -e \"if(process.env.HUSKY!=='0')require('child_process').execSync('husky',{stdio:'inherit'})\""
   },
   "dependencies": {
     "astro": "^5.2.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,astro}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^3.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.66.0",
+    "vitest": "^4.1.10"
   }
 }
