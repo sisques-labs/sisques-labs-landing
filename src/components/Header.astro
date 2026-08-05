@@ -183,9 +183,12 @@ const links = [
   .mobile-menu {
     padding: 1rem var(--gutter) 2rem;
     border-bottom: 1px solid var(--line);
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 1rem;
+  }
+  .mobile-menu:not([hidden]) {
+    display: flex;
   }
   .mobile-menu nav {
     display: flex;
