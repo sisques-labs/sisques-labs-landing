@@ -27,8 +27,10 @@ npm run preview  # sirve el build de producción
 ```
 src/
 ├─ components/      # Header, Hero, Projects, Services, Contact, Footer, toggles…
+├─ content.config.ts  # schema (Zod) de la colección "projects"
+├─ content/
+│  └─ projects/    # 👉 un .md bilingüe por proyecto (ver "Añadir un proyecto")
 ├─ data/
-│  ├─ projects.ts  # 👉 edita aquí los proyectos del escaparate (placeholders)
 │  └─ services.ts  # 👉 edita aquí los servicios
 ├─ i18n/
 │  ├─ ui.ts        # 👉 todos los textos ES/EN
@@ -40,10 +42,20 @@ src/
 └─ styles/global.css  # tokens de diseño y temas
 ```
 
+## Añadir un proyecto
+
+Los proyectos del escaparate son ficheros markdown en `src/content/projects/`,
+uno por proyecto, sin necesidad de tocar código:
+
+1. Copia `src/content/projects/_TEMPLATE.md` a `tu-proyecto.md` en la misma carpeta.
+2. Rellena el frontmatter (nombre, categoría, resumen, rol y tags — categoría,
+   resumen y rol van por duplicado `_es` / `_en` para el bilingüe; el resto de
+   campos, como los tags, se comparten). Usa `order` para controlar la posición.
+3. Guarda y ejecuta `npm run dev` — Astro valida el schema (`src/content.config.ts`)
+   y avisa en build si falta algún campo o el tipo no encaja.
+
 ## Cómo personalizar
 
-- **Proyectos:** edita `src/data/projects.ts` (nombre, categoría, resumen, tags,
-  año, rol, enlace y color de acento). Los actuales son placeholders.
 - **Servicios:** edita `src/data/services.ts`.
 - **Textos:** todos los copys están en `src/i18n/ui.ts`.
 - **Colores / tema:** las variables CSS viven en `src/styles/global.css`.
