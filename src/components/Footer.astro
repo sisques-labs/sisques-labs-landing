@@ -29,7 +29,13 @@ const social = [
     <nav class="footer__col" aria-label="Footer">
       <h3>{t("footer.nav")}</h3>
       <ul>
-        {nav.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        {
+          nav.map((l) => (
+            <li>
+              <a href={l.href}>{l.label}</a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 

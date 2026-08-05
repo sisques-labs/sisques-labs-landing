@@ -59,7 +59,8 @@ export const ui = {
     "contact.placeholder.email": "tu@email.com",
     "contact.placeholder.message": "Qué quieres construir, plazos, contexto…",
 
-    "footer.tagline": "Diseño y desarrollo de producto desde España, para el mundo.",
+    "footer.tagline":
+      "Diseño y desarrollo de producto desde España, para el mundo.",
     "footer.nav": "Navegación",
     "footer.social": "Conecta",
     "footer.rights": "Todos los derechos reservados.",
