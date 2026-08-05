@@ -1,10 +1,24 @@
 ---
+import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { projects, localizeProject } from "../data/projects";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const items = projects.map((p) => localizeProject(p, lang));
+
+const entries = await getCollection("projects");
+const items = entries
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((entry) => ({
+    id: entry.id,
+    name: entry.data.name,
+    category: lang === "en" ? entry.data.category_en : entry.data.category_es,
+    summary: lang === "en" ? entry.data.summary_en : entry.data.summary_es,
+    tags: entry.data.tags,
+    year: entry.data.year,
+    role: lang === "en" ? entry.data.role_en : entry.data.role_es,
+    url: entry.data.url,
+    accent: entry.data.accent,
+  }));
 ---
 
 <section class="section work" id="work">
