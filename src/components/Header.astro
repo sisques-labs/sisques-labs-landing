@@ -18,7 +18,9 @@ const links = [
   <div class="container site-header__inner">
     <a class="brand" href={base} aria-label="Sisques Labs">
       <span class="brand__mark" aria-hidden="true"></span>
-      <span class="brand__name">sisques<span class="brand__labs">labs</span></span>
+      <span class="brand__name"
+        >sisques<span class="brand__labs">labs</span></span
+      >
     </a>
 
     <nav class="nav" aria-label="Primary">
@@ -31,14 +33,26 @@ const links = [
       <a class="btn btn--primary nav-cta" href="#contact">{t("nav.cta")}</a>
     </div>
 
-    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+    <button
+      class="burger"
+      id="burger"
+      type="button"
+      aria-label="Menu"
+      aria-expanded="false"
+    >
       <span></span><span></span>
     </button>
   </div>
 
   <div class="mobile-menu" id="mobile-menu" hidden>
     <nav aria-label="Mobile">
-      {links.map((l) => <a href={l.href} class="mobile-link">{l.label}</a>)}
+      {
+        links.map((l) => (
+          <a href={l.href} class="mobile-link">
+            {l.label}
+          </a>
+        ))
+      }
     </nav>
     <a class="btn btn--primary" href="#contact">{t("nav.cta")}</a>
   </div>
@@ -53,7 +67,9 @@ const links = [
     backdrop-filter: saturate(140%) blur(14px);
     -webkit-backdrop-filter: saturate(140%) blur(14px);
     border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+    transition:
+      border-color 0.3s ease,
+      background-color 0.3s ease;
   }
   .site-header.is-scrolled {
     border-color: var(--line);
@@ -84,8 +100,13 @@ const links = [
     animation: pulse 3.5s ease-in-out infinite;
   }
   @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent); }
-    50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 8%, transparent); }
+    0%,
+    100% {
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 8%, transparent);
+    }
   }
   .brand__labs {
     color: var(--ink-faint);
@@ -148,7 +169,9 @@ const links = [
     width: 18px;
     height: 2px;
     background: var(--ink);
-    transition: transform 0.3s ease, opacity 0.2s ease;
+    transition:
+      transform 0.3s ease,
+      opacity 0.2s ease;
   }
   .burger[aria-expanded="true"] span:first-child {
     transform: translateY(3.5px) rotate(45deg);
@@ -212,6 +235,6 @@ const links = [
     a.addEventListener("click", () => {
       burger?.setAttribute("aria-expanded", "false");
       if (menu) menu.hidden = true;
-    })
+    }),
   );
 </script>

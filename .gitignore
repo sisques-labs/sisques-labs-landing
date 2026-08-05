@@ -24,3 +24,9 @@ pnpm-debug.log*
 # editor
 .vscode/
 .idea/
+
+# tests / coverage
+/coverage
+
+# pnpm
+.pnpm-store
