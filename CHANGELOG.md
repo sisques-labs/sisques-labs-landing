@@ -1,6 +1,10 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.1.2] - 2026-08-05
+
+### Bug Fixes
+- **header:** Restore hidden state for mobile nav menu (#19) (1d49882)
 ## [0.1.1] - 2026-08-05
 
 ### Bug Fixes
