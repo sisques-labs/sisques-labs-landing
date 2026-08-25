@@ -1,6 +1,21 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.1.3] - 2026-08-10
+
+### Chore
+- **deps:** Update dependency eslint to v10.8.1 (#22) (7afb41c)
+- **deps:** Update dependency astro to v7.2.0 (3a1db35)
+- **deps:** Pin actions/checkout action to v7.0.1 (285dc72)
+- **deps:** Pin actions/configure-pages action to v6.0.0 (4c24f90)
+- **deps:** Pin actions/deploy-pages action to v5.0.0 (771bb07)
+- **deps:** Pin actions/upload-pages-artifact action to v5.0.0 (b510068)
+- **deps:** Pin dependency @astrojs/check to 0.9.10 (083184d)
+- **deps:** Pin dependency @eslint/js to 10.0.1 (f0f5743)
+- **deps:** Pin dependency eslint to 10.8.1 (0e9938e)
+- **deps:** Pin dependency eslint-config-prettier to 10.1.8 (5a51ba3)
+- **deps:** Pin dependency husky to 9.1.7 (59f35e9)
+- **deps:** Pin dependency eslint-plugin-astro to 3.1.0 (f5d22d7)
 ## [0.1.2] - 2026-08-05
 
 ### Bug Fixes
