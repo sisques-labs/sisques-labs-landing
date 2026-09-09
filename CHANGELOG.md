@@ -1,6 +1,24 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.1.5] - 2026-09-09
+
+### Bug Fixes
+- **deps:** Update dependency astro to v7.2.9 (#58) (457bca8)
+- **deps:** Update dependency astro to v7.3.1 (#67) (413a1bc)
+
+### Chore
+- **deps:** Update dependency eslint to v10.9.1 (#57) (a9a32b4)
+- **deps:** Update dependency lint-staged to v17.4.1 (#59) (82d2a57)
+- **deps:** Update dependency typescript-eslint to v8.68.0 (#60) (426dee7)
+- **deps:** Update node.js to v24.20.0 (#61) (d3f616a)
+- **deps:** Lock file maintenance (#62) (c5982aa)
+- **deps:** Update actions/deploy-pages action to v5.0.1 (#63) (fe2ab1d)
+- **deps:** Update dependency eslint to v10.10.0 (#64) (bd2a974)
+- **deps:** Update dependency lint-staged to v17.5.0 (#65) (d84657b)
+- **deps:** Update dependency typescript-eslint to v8.69.0 (#66) (d60956c)
+- **deps:** Lock file maintenance (#70) (b920e76)
+- **deps:** Update dependency vitest to v5 (420b7cf)
 ## [0.1.4] - 2026-08-25
 
 ### Bug Fixes
