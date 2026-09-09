@@ -1,6 +1,24 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [0.1.4] - 2026-08-25
+
+### Bug Fixes
+- **deps:** Pin dependency astro to 7.2.0 (#46) (d3861cd)
+- **deps:** Update dependency astro to v7.2.4 (#50) (60ed447)
+
+### Chore
+- **deps:** Pin dependency lint-staged to 17.3.0 (#39) (578e86a)
+- **deps:** Pin dependency prettier to 3.9.6 (574696c)
+- **deps:** Pin dependency prettier-plugin-astro to 0.14.1 (#41) (80589ea)
+- **deps:** Pin dependency typescript to 6.0.3 (9f06330)
+- **deps:** Pin dependency typescript-eslint to v8.66.0 (c1841ef)
+- **deps:** Pin dependency vitest to 4.1.10 (4acca8d)
+- **deps:** Pin node.js to v24.19.0 (bd3c557)
+- **deps:** Update dependency vitest to v4.1.11 (#49) (b0c81d9)
+- **deps:** Update dependency eslint to v10.9.0 (#51) (2c7914c)
+- **deps:** Update dependency typescript-eslint to v8.67.0 (#52) (c1146cb)
+- **deps:** Lock file maintenance (#53) (a180fdd)
 ## [0.1.3] - 2026-08-10
 
 ### Chore
